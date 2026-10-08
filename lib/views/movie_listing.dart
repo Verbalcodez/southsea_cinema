@@ -28,10 +28,10 @@ class _MovieListingState extends State<MovieListing> {
       body: Container(
         child: Column(
           children: [
-            const Text('Fast & Furious'),
+            const Text('Fast & Furious', style: cinemaHeaderStyle),
             const Text(
-              'A group of street racers become involved in dangerous races and criminal activities.',
-            ),
+                'A group of street racers become involved in dangerous races and criminal activities.',
+                style: TextStyle(color: cinemaFontMuted)),
             const Row(
               children: [
                 Icon(Icons.schedule),
