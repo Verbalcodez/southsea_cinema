@@ -18,9 +18,13 @@ class MovieListing extends StatelessWidget {
       body: Container(
           color: cinemaBrandLight,
           child: Column(
+            // ElevatedButton(onPressed:() => print(ADD)
+            //  , child: const(""))
             children: [
               Text("Fast & Furious"),
-              Text("best movie in the world right now")
+              Text("best movie in the world right now"),
+              ElevatedButton(
+                  onPressed: () => print("test"), child: Text("Add ticket"))
             ],
           )),
     );
