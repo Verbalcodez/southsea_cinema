@@ -13,6 +13,6 @@ const Color cinemaSurface = Color(0xFF242936);
 
 const TextStyle cinemaHeaderStyle = TextStyle(
   color: cinemaFontWhite,
-  fontSize: 18,
+  fontSize: 19,
   fontWeight: FontWeight.bold,
 );
