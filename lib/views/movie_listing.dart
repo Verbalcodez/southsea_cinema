@@ -84,7 +84,7 @@ class _MovieListingState extends State<MovieListing> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Tickets (\u00A3${widget.movie.ticketPrice.toStringAsFixed(2)} each):',
+                          'Tickets (${widget.movie.formattedPrice} each):',
                           style: const TextStyle(
                             color: cinemaFontWhite,
                             fontSize: 16,
@@ -182,7 +182,7 @@ class _MovieListingState extends State<MovieListing> {
                   ),
                   const SizedBox(height: 20),
                   Text(
-                    'Tickets (\u00A3${widget.movie.ticketPrice.toStringAsFixed(2)} each):',
+                    'Tickets (${widget.movie.formattedPrice} each):',
                     style: const TextStyle(
                       color: cinemaFontWhite,
                       fontSize: 16,
