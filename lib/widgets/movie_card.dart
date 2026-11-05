@@ -14,26 +14,71 @@ class MovieCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color:cinemaSurface,
-      shape:const RoundedRectangleBorder(
+      color: cinemaSurface,
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.zero,
       ),
       child: Padding(
         padding: const EdgeInsets.all(16),
-        child: Column(
+        child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Image.asset(
               movie.imagePath,
-              width: double.infinity,
-              height: 200,
+              width: 80,
+              height: 80,
               fit: BoxFit.cover,
             ),
-            const SizedBox(height:12)
+            const SizedBox(width: 16),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    movie.title,
+                    style: cinemaHeaderStyle,
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    'Age rating: ${movie.ageRating}',
+                    style: const TextStyle(
+                      color: cinemaBrand,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    movie.synopsis,
+                    style: const TextStyle(
+                      color: cinemaFontMuted,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    'Screening time: ${movie.screeningTime}',
+                    style: const TextStyle(
+                      color: cinemaFontWhite,
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: cinemaBrand,
+                      foregroundColor: cinemaBackground,
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.zero,
+                      ),
+                    ),
+                    onPressed: () {
+                      print('Booking selected: ${movie.title}');
+                    },
+                    child: const Text('Book now'),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
-      )
-    )
+      ),
+    );
   }
 }
-
