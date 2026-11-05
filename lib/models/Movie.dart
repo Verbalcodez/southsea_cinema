@@ -1,5 +1,5 @@
 
-class Southsea {
+class Movie{
   final String id;
   final String title;
   final String synopsis;
@@ -8,7 +8,7 @@ class Southsea {
   final double ticketPrice;
   final String imagePath;
 
-  const Southsea({
+  const Movie({
     required this.id,
     required this.title,
     required this.synopsis,
