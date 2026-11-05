@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:southsea_cinema/constants.dart';
+import 'package:southsea_cinema/respositories/movies_respository.dart';
+import 'package:southsea_cinema/widgets/movie_card.dart';
 import 'package:southsea_cinema/widgets/nav_drawer.dart';
 
 class MovieListing extends StatelessWidget {
@@ -7,26 +9,36 @@ class MovieListing extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final movies = MovieRepository().getMovies();
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text(appTitle, style: cinemaHeaderStyle),
+        title: const Text(
+          appTitle,
+          style: cinemaHeaderStyle,
+        ),
         backgroundColor: cinemaSurface,
-        iconTheme: const IconThemeData(color: cinemaBrand),
+        iconTheme: const IconThemeData(
+          color: cinemaBrand,
+        ),
         elevation: 0,
       ),
       drawer: const NavDrawer(),
       body: Container(
-          color: cinemaBrandLight,
-          child: Column(
-            // ElevatedButton(onPressed:() => print(ADD)
-            //  , child: const(""))
-            children: [
-              Text("Fast & Furious"),
-              Text("best movie in the world right now"),
-              ElevatedButton(
-                  onPressed: () => print("test"), child: Text("Add ticket"))
-            ],
-          )),
+        color: cinemaBackground,
+        padding: const EdgeInsets.all(20),
+        child: ListView.builder(
+          itemCount: movies.length,
+          itemBuilder: (context, index) {
+            return Padding(
+              padding: const EdgeInsets.only(bottom: 16),
+              child: MovieCard(
+                movie: movies[index],
+              ),
+            );
+          },
+        ),
+      ),
     );
   }
 }
