@@ -1,4 +1,4 @@
-# Southsea Cinema - Flutter Coursework
+# Southsea Cinema - Flutter Coursework (2026)
 
 This repository contains the coursework starter project for students enrolled in the **Programming Applications and Programming Languages (M30235)** and **User Experience Design and Implementation (M32605)** modules at the University of Portsmouth.
 
