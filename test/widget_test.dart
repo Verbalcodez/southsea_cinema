@@ -36,6 +36,19 @@ void main() {
       await tester.pump();
 
       expect(find.text('1 ticket(s) added to your order.'), findsOneWidget);
+
+      await tester.pageBack();
+      await tester.pumpAndSettle();
+
+      expect(find.byType(HomeView), findsOneWidget);
+
+      await tester.tap(find.text('Book now').at(1));
+      await tester.pumpAndSettle();
+
+      expect(find.byType(MovieListing), findsOneWidget);
+      expect(find.text('Rocky (15)'), findsOneWidget);
+      expect(find.text('Tickets (£12.00 each):'), findsOneWidget);
+      expect(find.text('1 ticket(s) added to your order.'), findsNothing);
     });
   });
 }
