@@ -17,9 +17,6 @@ class HomeView extends StatelessWidget {
           appTitle,
           style: cinemaHeaderStyle,
         ),
-        backgroundColor: cinemaSurface,
-        iconTheme: const IconThemeData(color: cinemaBrand),
-        elevation: 0,
       ),
       drawer: const NavDrawer(),
       body: Container(
