@@ -123,6 +123,11 @@ class _MovieListingState extends State<MovieListing> {
                         PrimaryButton(
                           label: 'Add to order',
                           onPressed: () {
+                            final BasketItem item = BasketItem(
+                              movie: widget.movie,
+                              quantity: _ticketQuantity,
+                            );
+                            BasketRepository.instance.addItem(item);
                             setState(() {
                               _bookingMessage = '$_ticketQuantity ticket(s) '
                                   'added to your order.';
@@ -221,6 +226,11 @@ class _MovieListingState extends State<MovieListing> {
                   PrimaryButton(
                     label: 'Add to order',
                     onPressed: () {
+                      final BasketItem item = BasketItem(
+                        movie: widget.movie,
+                        quantity: _ticketQuantity,
+                      );
+                      BasketRepository.instance.addItem(item);
                       setState(() {
                         _bookingMessage = '$_ticketQuantity ticket(s) '
                             'added to your order.';
