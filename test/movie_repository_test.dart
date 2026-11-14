@@ -49,5 +49,20 @@ void main() {
 
       expect(movie, isNull);
     });
+
+    test('loadMoviesFromAsset reads every film from the JSON file', () async {
+      TestWidgetsFlutterBinding.ensureInitialized();
+
+      final MovieRepository repository = MovieRepository();
+      final List<Movie> movies = await repository.loadMoviesFromAsset();
+
+      expect(movies.length, 3);
+
+      expect(movies[0].id, 'fast-furious');
+      expect(movies[0].ticketPrice, isA<double>());
+
+      expect(movies[1].id, 'rocky');
+      expect(movies[2].id, 'creed');
+    });
   });
 }
